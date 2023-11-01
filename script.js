@@ -37,10 +37,10 @@ window.addEventListener('scroll',()=>{
            	catLinks.forEach(link => {
 	              if(link.getAttribute('data-number-index') == itemNum){
 	                  link.style = 'color: #59CAE8 !important; ';
-		          category.setAttribute('underline', "true");
+		          item.setAttribute('underline', "true");
 	              }else {
 	                  link.style = '';
-		          category.setAttribute('underline', "false");
+		          item.setAttribute('underline', "false");
 	              }
 		})
 	}
