@@ -15,7 +15,7 @@ window.addEventListener('load', ()=>{
             if(document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
                 setInterval(()=>{
                     i++;
-                    if(i > 249 && targetHeader.getAttribute('data-modal-was-shown') == "false"){
+                    if(i > 249 && document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
                         document.getElementById('givenow').click();
                         document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
                     }
