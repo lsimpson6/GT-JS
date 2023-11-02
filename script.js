@@ -1,6 +1,5 @@
 var i = 0;
 var el = -1;
-var targetHeader = document.getElementById('header-main');
 function setAtrr(){document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");}
 document.querySelectorAll('.left-grid-right-text-cta').forEach(gCta => gCta.addEventListener('click', setAtrr()));
 
@@ -9,16 +8,16 @@ window.addEventListener('load', ()=>{
 	let params = new URLSearchParams(windowUrl);
   
   	if(params.has('subId') && params.get('subId') != "" || params.get('subId') != null){
-        document.getElementById('thankyou-modal-button').click();
-        targetHeader.setAttribute('data-modal-was-shown', "true");
+	        document.getElementById('thankyou-modal-button').click();
+	        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
   	}else{
         document.querySelectorAll('.category-title').forEach(t => {el++; t.setAttribute("data-hyperlink-number", el)})
-            if(targetHeader.getAttribute('data-modal-was-shown') == "false"){
+            if(document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
                 setInterval(()=>{
                     i++;
                     if(i > 249 && targetHeader.getAttribute('data-modal-was-shown') == "false"){
                         document.getElementById('givenow').click();
-                        targetHeader.setAttribute('data-modal-was-shown', "true");
+                        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
                     }
                 }, 100)
             }
