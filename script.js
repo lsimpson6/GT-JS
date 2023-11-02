@@ -6,12 +6,11 @@ document.querySelectorAll('.left-grid-right-text-cta').forEach(gCta => gCta.addE
 window.addEventListener('load', ()=>{
 	let windowUrl = window.location.search;
 	let params = new URLSearchParams(windowUrl);
-  
+        document.querySelectorAll('.category-title').forEach(t => {el++; t.setAttribute("data-hyperlink-number", el)})
   	if(params.has('subId') && params.get('subId') != "" || params.get('subId') != null){
 	        document.getElementById('thankyou-modal-button').click();
 	        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
   	}else{
-        document.querySelectorAll('.category-title').forEach(t => {el++; t.setAttribute("data-hyperlink-number", el)})
             if(document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
                 setInterval(()=>{
                     i++;
