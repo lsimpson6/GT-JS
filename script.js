@@ -32,7 +32,7 @@ window.addEventListener('scroll',()=>{
     let catalogMenu = document.getElementById('catalog-menu');
     category.forEach(item => {
         let itemNum = item.getAttribute('data-hyperlink-number');
-        if(item.getBoundingClientRect().top < (50 + header + linksHeight) && item.getBoundingClientRect().bottom < (50 + header + linksHeight)){
+        if(item.getBoundingClientRect().top < (65 + header + linksHeight) && item.getBoundingClientRect().bottom < (65 + header + linksHeight)){
             catLinks.forEach(link => {
                 if(link.getAttribute('data-number-index') == itemNum){
                     link.style = 'color: #59CAE8 !important; ';
