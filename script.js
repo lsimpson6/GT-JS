@@ -8,6 +8,10 @@ window.addEventListener('load', ()=>{
 	let params = new URLSearchParams(windowUrl);
         document.querySelectorAll('.category-title').forEach(t => {el++; t.setAttribute("data-hyperlink-number", el)})
   	if(params.has('subId') && params.get('subId') != "" || params.get('subId') != null){
+		let nameField = document.getElementById('on_behalf_of-bf0c727e-e018-4107-bc9b-a4480dd1f5af');
+		let nameData = document.getElementById('thankYouModal');
+		nameField.textContent = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
+		nameField.value = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
 	        document.getElementById('thankyou-modal-button').click();
 	        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
   	}else{
