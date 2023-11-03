@@ -53,7 +53,7 @@ window.addEventListener('scroll',()=>{
 	if(targetMenu.getBoundingClientRect().top < 0 + header + linksHeight){
     	catalogMenu.style = "top:" + header + "px;";
         catalogMenu.classList.add('sticky-cat-nav');
-        if(lastItem[(lastItem.length - 1)].getAttribute('underline') == "true" && (targetMenu.getBoundingClientRect().bottom < lastItem.getBoundingClientRect().bottom)){
+        if(lastItem[(lastItem.length - 1)].getAttribute('underline') == "true" && (targetMenu.getBoundingClientRect().bottom < lastItem[(lastItem.length - 1)].getBoundingClientRect().bottom)){
             catalogMenu.style = "";     
             catalogMenu.classList.remove('sticky-cat-nav');
         }
