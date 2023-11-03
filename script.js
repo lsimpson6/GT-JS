@@ -57,7 +57,7 @@ window.addEventListener('scroll',()=>{
         console.log('menu top: ' + targetMenu.getBoundingClientRect().top);
         console.log('menu bottom: ' + targetMenu.getBoundingClientRect().bottom);
         console.log('item bottom: ' + lastItem[(lastItem.length - 1)].getBoundingClientRect().bottom);
-        if(lastNavItem[(lastItem.length - 1)].getAttribute('underline') == "true" && (lastGridItem[(lastGridItem.length - 1)].getBoundingClientRect().bottom < 0 + header + linksHeight)){
+        if(lastNavItem[(lastNavItem.length - 1)].getAttribute('underline') == "true" && (lastGridItem[(lastGridItem.length - 1)].getBoundingClientRect().bottom < 0 + header + linksHeight)){
             catalogMenu.style = "";     
             catalogMenu.classList.remove('sticky-cat-nav');
         }
