@@ -54,9 +54,6 @@ window.addEventListener('scroll',()=>{
 	if(targetMenu.getBoundingClientRect().top < 0 + header + linksHeight){
     	catalogMenu.style = "top:" + header + "px;";
         catalogMenu.classList.add('sticky-cat-nav');
-        console.log('menu top: ' + targetMenu.getBoundingClientRect().top);
-        console.log('menu bottom: ' + targetMenu.getBoundingClientRect().bottom);
-        console.log('item bottom: ' + lastItem[(lastItem.length - 1)].getBoundingClientRect().bottom);
         if(lastNavItem[(lastNavItem.length - 1)].getAttribute('underline') == "true" && (lastGridItem[(lastGridItem.length - 1)].getBoundingClientRect().bottom < 0 + header + linksHeight)){
             catalogMenu.style = "";     
             catalogMenu.classList.remove('sticky-cat-nav');
