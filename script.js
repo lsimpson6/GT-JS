@@ -49,7 +49,7 @@ window.addEventListener('scroll',()=>{
     })
     
     var targetMenu = document.getElementById('menu-target-but-fancy');
-    var lastItem = document.querySelector('.category-menu:nth-of-type(last)');
+    var lastItem = document.querySelectorAll('.category-menu:last-child');
 	if(targetMenu.getBoundingClientRect().top < 0 + header + linksHeight){
     	catalogMenu.style = "top:" + header + "px;";
         catalogMenu.classList.add('sticky-cat-nav');
