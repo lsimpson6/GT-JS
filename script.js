@@ -44,6 +44,11 @@ window.addEventListener('scroll',()=>{
                     link.style = '';
                     link.setAttribute('underline', "false");
                 }
+
+                if(document.querySelectorAll('.category-menu:nth-of-type(last)').getAttribute('underline') == "true" && item.getBoundingClientRect().bottom < (65 + header + linksHeight)){
+                    link.style = '';
+                    link.setAttribute('underline', "false");
+                }
             })
         }
     })
