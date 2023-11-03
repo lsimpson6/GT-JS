@@ -44,18 +44,19 @@ window.addEventListener('scroll',()=>{
                     link.style = '';
                     link.setAttribute('underline', "false");
                 }
-
-                if(document.querySelectorAll('.category-menu:nth-of-type(last)').getAttribute('underline') == "true" && item.getBoundingClientRect().bottom < (65 + header + linksHeight)){
-                    link.style = '';
-                    link.setAttribute('underline', "false");
-                }
             })
         }
     })
     
-	if(document.getElementById('menu-target-but-fancy').getBoundingClientRect().top < 0 + header + linksHeight){
+    var targetMenu = document.getElementById('menu-target-but-fancy');
+    var lastItem = document.querySelector('.category-menu:nth-of-type(last)');
+	if(targetMenu.getBoundingClientRect().top < 0 + header + linksHeight){
     	catalogMenu.style = "top:" + header + "px;";
         catalogMenu.classList.add('sticky-cat-nav');
+        if(lastItem.getAttribute('underline') == "true" && (targetMenu.getBoundingClientRect().bottom < lastItem.getBoundingClientRect().bottom)){
+            catalogMenu.style = "";     
+            catalogMenu.classList.remove('sticky-cat-nav');
+        }
     }else {
     	catalogMenu.style = "";     
         catalogMenu.classList.remove('sticky-cat-nav');
