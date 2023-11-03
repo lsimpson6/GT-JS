@@ -56,10 +56,10 @@ window.addEventListener('scroll',()=>{
         console.log('menu top: ' + targetMenu.getBoundingClientRect().top);
         console.log('menu bottom: ' + targetMenu.getBoundingClientRect().bottom);
         console.log('item bottom: ' + lastItem[(lastItem.length - 1)].getBoundingClientRect().bottom);
-        //if(lastItem[(lastItem.length - 1)].getAttribute('underline') == "true" && (targetMenu.getBoundingClientRect().top > lastItem[(lastItem.length - 1)].getBoundingClientRect().bottom)){
-          //  catalogMenu.style = "";     
-            //catalogMenu.classList.remove('sticky-cat-nav');
-        //}
+        if(lastItem[(lastItem.length - 1)].getAttribute('underline') == "true" && (lastItem[(lastItem.length - 1)].getBoundingClientRect().bottom < 0 + header + linksHeight)){
+            catalogMenu.style = "";     
+            catalogMenu.classList.remove('sticky-cat-nav');
+        }
     }else {
     	catalogMenu.style = "";     
         catalogMenu.classList.remove('sticky-cat-nav');
