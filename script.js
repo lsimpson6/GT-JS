@@ -56,7 +56,10 @@ window.addEventListener('scroll',()=>{
         catalogMenu.classList.add('sticky-cat-nav');
         if(lastNavItem[(lastNavItem.length - 1)].getAttribute('underline') == "true" && (lastGridItem[(lastGridItem.length - 1)].getBoundingClientRect().bottom < 0 + header + linksHeight)){
             catalogMenu.style = "";     
-            catalogMenu.classList.remove('sticky-cat-nav');
+            catalogMenu.classList.add('hidden-nav');
+        }else {
+            catalogMenu.classList.remove('hidden-nav');
+
         }
     }else {
     	catalogMenu.style = "";     
