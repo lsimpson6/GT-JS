@@ -49,11 +49,11 @@ window.addEventListener('scroll',()=>{
     })
     
     var targetMenu = document.getElementById('menu-target-but-fancy');
-    var lastItem = document.querySelectorAll('.category-menu:last-child');
+    var lastItem = document.querySelectorAll('.category-menu');
 	if(targetMenu.getBoundingClientRect().top < 0 + header + linksHeight){
     	catalogMenu.style = "top:" + header + "px;";
         catalogMenu.classList.add('sticky-cat-nav');
-        if(lastItem.getAttribute('underline') == "true" && (targetMenu.getBoundingClientRect().bottom < lastItem.getBoundingClientRect().bottom)){
+        if(lastItem[lastItem.length].getAttribute('underline') == "true" && (targetMenu.getBoundingClientRect().bottom < lastItem.getBoundingClientRect().bottom)){
             catalogMenu.style = "";     
             catalogMenu.classList.remove('sticky-cat-nav');
         }
