@@ -18,9 +18,8 @@ window.addEventListener('load', ()=>{
             if(document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
                 setInterval(()=>{
                     i++;
-                    if(i > 249 && document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
-                        document.getElementById('givenow').click();
-                        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
+                    if(i > 249){
+                        document.getElementById('suggestion-modal-button').click();
                     }
                 }, 100)
             }
