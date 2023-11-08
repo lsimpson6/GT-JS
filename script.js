@@ -1,8 +1,12 @@
 var i = 0;
 var el = -1;
 
-document.querySelectorAll('.left-grid-right-text-cta').forEach(gCta => gCta.addEventListener('click', document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");));
-document.querySelectorAll('.cta-button').forEach(cta => cta.addEventListener('click', document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");));
+document.querySelectorAll('.left-grid-right-text-cta').forEach(gCta => gCta.addEventListener('click',()=>{
+ document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");	
+}));
+document.querySelectorAll('.cta-button').forEach(cta => cta.addEventListener('click',()=>{
+ document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");	
+}));
 
 window.addEventListener('load', ()=>{
 	console.log('main load');
