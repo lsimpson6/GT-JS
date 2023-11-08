@@ -15,14 +15,19 @@ window.addEventListener('load', ()=>{
   	if(params.has('subId') && params.get('subId') != "" || params.get('subId') != null){
 		let nameField = document.getElementById('on_behalf_of-bf0c727e-e018-4107-bc9b-a4480dd1f5af');
 		let nameData = document.getElementById('thankYouModal');
-		nameField.textContent = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
-		nameField.value = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
+		try{
+			let names = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
+			nameField.textContent = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
+			nameField.value = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
+		}catch(e){
+			//do nothing
+		}
 	        document.getElementById('thankyou-modal-button').click();
 	        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
   	}else{
-	setInterval(()=>{
-	showSuggestion();
-	}, 25000)
+		setInterval(()=>{
+		showSuggestion();
+		}, 25000)
 	}
 })
 
