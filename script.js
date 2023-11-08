@@ -15,15 +15,13 @@ window.addEventListener('load', ()=>{
 	        document.getElementById('thankyou-modal-button').click();
 	        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
   	}else{
-            if(document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
-                setInterval(()=>{
-                    i++;
-                    if(i > 249 && document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
-                        document.getElementById('suggestion-modal-button').click();
-			document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
-                    }
-                }, 100)
-            }
+	setInterval(()=>{
+	    i++;
+	    if(i > 249 && document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
+		document.getElementById('suggestion-modal-button').click();
+		document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
+	    }
+	}, 100)
 	}
 })
  
