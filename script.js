@@ -20,14 +20,18 @@ window.addEventListener('load', ()=>{
 	        document.getElementById('thankyou-modal-button').click();
 	        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
   	}else{
-	setTimeout(()=>{;
-	    if(document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
-		document.getElementById('suggestion-modal-button').click();
-		document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
-	    }
+	setInterval(()=>{
+	showSuggestion();
 	}, 25000)
 	}
 })
+
+function showSuggestion(){
+	if(document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
+		document.getElementById('suggestion-modal-button').click();
+		document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
+	}
+}
  
 window.addEventListener('scroll',()=>{
     let catLinks = document.querySelectorAll('.category-menu');
