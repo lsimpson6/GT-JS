@@ -1,13 +1,15 @@
 var i = 0;
 var el = -1;
-function setAtrr(){alert('set to true'); document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");}
+function setAtrr(){console.log('set attr run'); document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");}
 document.querySelectorAll('.left-grid-right-text-cta').forEach(gCta => gCta.addEventListener('click', setAtrr()));
 
 window.addEventListener('load', ()=>{
+	console.log('main load');
 	let windowUrl = window.location.search;
 	let params = new URLSearchParams(windowUrl);
         document.querySelectorAll('.category-title').forEach(t => {el++; t.setAttribute("data-hyperlink-number", el)})
   	if(params.has('subId') && params.get('subId') != "" || params.get('subId') != null){
+		console.log('sub id is true, run');
 		let nameField = document.getElementById('on_behalf_of-bf0c727e-e018-4107-bc9b-a4480dd1f5af');
 		let nameData = document.getElementById('thankYouModal');
 		nameField.textContent = nameData.getAttribute('data-fname') + ' ' + nameData.getAttribute('data-lname');
@@ -15,9 +17,11 @@ window.addEventListener('load', ()=>{
 	        document.getElementById('thankyou-modal-button').click();
 	        document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
   	}else{
-	setInterval(()=>{
+	setInterval(()=>{;
 	    i++;
+		console.log('interval' + i);
 	    if(i > 249 && document.getElementById('header-main').getAttribute('data-modal-was-shown') == "false"){
+		console.log('set to true within interval');
 		document.getElementById('suggestion-modal-button').click();
 		document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");
 	    }
