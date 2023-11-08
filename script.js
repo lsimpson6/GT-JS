@@ -1,6 +1,6 @@
 var i = 0;
 var el = -1;
-function setAtrr(){document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");}
+function setAtrr(){alert('set to true'); document.getElementById('header-main').setAttribute('data-modal-was-shown', "true");}
 document.querySelectorAll('.left-grid-right-text-cta').forEach(gCta => gCta.addEventListener('click', setAtrr()));
 
 window.addEventListener('load', ()=>{
